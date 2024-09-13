@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  labels:
+    app: software
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: software
+  template:
+    metadata:
+      labels:
+        app: software
+    spec:
+      containers:
+      - name: software
+        image: bhargavteja14/softwarelife:latest
+        ports:
+        - containerPort: 80

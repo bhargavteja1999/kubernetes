@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: waso-deployment
+  labels:
+    app: waso
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: waso
+  template:
+    metadata:
+      labels:
+        app: waso
+    spec:
+      containers:
+      - name: waso-delpoyment
+        image: bhargavteja14/waso:latest 
+        ports:
+        - containerPort: 80
