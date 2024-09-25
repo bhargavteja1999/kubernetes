@@ -18,5 +18,10 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-hello
-  hello world
+- task: KubectlInstaller@0
+  inputs:
+     kubectlVersion: 'latest'
+  
+- task: PowerShell@2
+  inputs:
+      filePath: './kube.ps1'
