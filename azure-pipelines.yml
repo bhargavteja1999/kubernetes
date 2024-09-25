@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool:
+pool: 
   vmImage: windows-latest
 
 steps:
