@@ -26,12 +26,3 @@ steps:
   inputs:
       filePath: './kube.ps1'
 
-- task: GitHubRelease@1
-  inputs:
-    gitHubConnection: 'github.com_bhargavteja1999'
-    repositoryName: 'bhargavteja1999/kuberneteskube'
-    action: 'create'
-    target: '$(Build.SourceVersion)'
-    tagSource: 'gitTag'
-    changeLogCompareToRelease: 'lastFullRelease'
-    changeLogType: 'commitBased'
