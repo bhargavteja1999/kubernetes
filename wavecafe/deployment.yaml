@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: grafana-deployment
+  name: docker-wavecafe
   labels:
-    app: grafana
+    app: wavecafe
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: grafana
+      app: wavecafe
   template:
     metadata:
       labels:
-        app: grafana
+        app: wavecafe
     spec:
       containers:
-      - name: grafana
-        image: grafana/grafana:latest
+      - name: wavecafe
+        image: bhargavteja14/wavecafe:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 80

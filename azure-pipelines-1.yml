@@ -3,20 +3,19 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- 
 
 pool:
-  vmImage: windows-latest
+  vmImage: 'windows-latest' 
 
 steps:
+
 - task: KubectlInstaller@0
+  displayName: 'Install Kubectl'
   inputs:
     kubectlVersion: 'latest'
-- task: PowerShell@2
-  displayName: 'App Deployment'
-  inputs:
-    targetType: filePath
-    filePath: ./kube.ps1
 
+- task: PowerShell@2
+  displayName: 'Run PowerShell Script'
+  inputs:
+    filePath: './kube.ps1' 
 

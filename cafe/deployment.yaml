@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apache2-deployment
+  name: soft-deployment
   labels:
-    app: apache2
+    app: soft
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: apache2
+      app: soft
   template:
     metadata:
       labels:
-        app: apache2
+        app: soft
     spec:
       containers:
-      - name: apache2
-        image: ubuntu/apache2:latest
+      - name: soft-container  # Corrected container name
+        image: bhargavteja14/soft-landing:latest
         ports:
         - containerPort: 80
